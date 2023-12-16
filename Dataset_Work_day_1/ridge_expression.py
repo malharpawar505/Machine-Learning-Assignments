@@ -6,7 +6,7 @@
 
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_spli
 from sklearn.linear_model import LinearRegression,Ridge
 from sklearn.metrics import mean_squared_error
 
@@ -14,6 +14,7 @@ from sklearn.metrics import mean_squared_error
 np.random.seed(42)
 x = 2*np.random.rand(100,1)
 y = 4+3* x + np.random.randn(100,1)
+print("created synthetic dataset")
 
 #split the dataset into training and testing sets
 
@@ -26,7 +27,7 @@ linear_reg_model.fit(x_train, y_train)
 #make predictions on the test set
 y_pred_linear = linear_reg_model.predict(x_test)
 
-#calculate mean Squared Error for linear regression
+#calculate mean Squared Error for linear Regression
 mse_linear = mean_squared_error(y_test, y_pred_linear)
 print("linear Regression - Mean Squared Error:",mse_linear)
 
@@ -34,10 +35,10 @@ print("linear Regression - Mean Squared Error:",mse_linear)
 ridge_model = Ridge(alpha = 1)#you can experiment with different values of alpha
 ridge_model.fit(x_train,y_train)
 
-#make predictions on the test set using Ridge regression
+#make predictions on the test set using Ridge Regression
 y_pred_ridge = ridge_model.predict(x_test)
 
-#calculate mean Squared  Error for ridge regression
+#calculate mean Squared  Error for ridge Regression
 mse_ridge = mean_squared_error(y_test,y_pred_ridge)
 print("Ridge Regression - mean Squared Error:",mse_ridge)
 

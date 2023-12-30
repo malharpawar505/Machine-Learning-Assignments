@@ -26,7 +26,7 @@ X_train, X_test, y_train, y_test = train_test_split(X,scaled_y[:,0],
                                test_size=0.3,
                                random_state=23)
 
-pipe.fit(X_train, y_train)
+pipe.fit(X_train, y_train)  
 y_pred = pipe.predict(X_test)
 print(r2_score(y_test, y_pred))
 
